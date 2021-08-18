@@ -2,14 +2,6 @@
 @import "../../sass/mixin";
 
 .about {
-  padding: 0 clamp(40px, 12vw, 100px);
-  padding-top: 100px;
-  padding-bottom: 100px;
-
-  @include maxw(768px) {
-    padding: 0 20px;
-  }
-
   &__container {
     max-width: 900px;
     margin: 0 auto;

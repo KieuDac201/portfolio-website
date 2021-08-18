@@ -1,0 +1,79 @@
+@import "../../sass/variables";
+@import "../../sass/mixin";
+
+.project {
+  &__container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  &__title {
+    color: $lightest-slate;
+    font-size: clamp(26px, 5vw, $fz-heading);
+    font-weight: bold;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  &__subTitle {
+    font-size: 14px;
+    font-family: $mono-font;
+    margin-bottom: 56px;
+    text-align: center;
+  }
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+  }
+
+  &__card {
+    padding: 25px;
+    background: $light-navy;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    &-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    &-fileIcon {
+      color: $green;
+      svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    &-githubIcon {
+      width: 20px;
+      height: 20px;
+      color: $light-slate;
+    }
+
+    &-title {
+      color: $lightest-slate;
+      font-size: $fz-xxl;
+      margin-bottom: 14px;
+    }
+    &-desc {
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+    &-list {
+      display: flex;
+      align-items: center;
+    }
+    &-item {
+      font-size: 14px;
+      font-family: $mono-font;
+      margin-right: 20px;
+    }
+  }
+}

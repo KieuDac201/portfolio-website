@@ -1,0 +1,169 @@
+@import "../../sass/variables";
+@import "../../sass/mixin";
+
+.work {
+  &__container {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  &__main {
+    position: relative;
+    margin-bottom: 100px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @include maxw(1080px) {
+      padding-top: 40px;
+    }
+    @include maxw(768px) {
+      margin-left: 20px;
+      margin-right: 20px;
+      box-shadow: 0 10px 30px -15px $navy-shadow;
+      margin-bottom: 35px;
+    }
+    @include maxw(687px) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    &:nth-child(odd) {
+      display: flex;
+      justify-content: flex-end;
+
+      .work__content {
+        right: auto;
+        left: 0;
+        align-items: flex-start;
+        text-align: left;
+      }
+      .work__tag,
+      .work__link {
+        margin-left: 0;
+        margin-right: 20px;
+      }
+    }
+  }
+  &__img {
+    width: 55%;
+    @include maxw(768px) {
+      width: 100%;
+      position: absolute;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+    .overlay {
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+        z-index: 3;
+        opacity: 0.85;
+        @include maxw(768px) {
+          display: block;
+          background: $navy;
+        }
+      }
+    }
+    img {
+      position: relative;
+      border-radius: $border-radius;
+
+      @include maxw(768px) {
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        object-fit: cover;
+      }
+    }
+  }
+  &__content {
+    position: absolute;
+    right: 0;
+    width: 55%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: flex-end;
+    text-align: right;
+    flex-direction: column;
+    z-index: 4;
+    @include maxw(1080px) {
+      width: 60%;
+    }
+    @include maxw(768px) {
+      align-items: flex-start;
+      width: 100%;
+      padding: 25px;
+      text-align: left;
+      position: relative;
+      top: auto;
+      transform: translateY(0);
+      .work__tag,
+      .work__link {
+        margin-left: 0;
+        margin-right: 20px;
+      }
+    }
+    @include maxw(687px) {
+      padding: 18px;
+    }
+  }
+  &__topTitle {
+    font-size: $fz-xs;
+    margin-bottom: 10px;
+  }
+  &__title {
+    color: $lightest-slate;
+    font-size: clamp(22px, 5vw, 26px);
+    margin-bottom: 24px;
+  }
+  &__desc {
+    box-shadow: 0 10px 30px -15px $navy-shadow;
+    border-radius: $border-radius;
+    padding: 25px;
+    color: $light-slate;
+    background: $light-navy;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    font-size: 15px;
+    @include maxw(768px) {
+      background: transparent;
+      box-shadow: none;
+      padding: 0;
+    }
+  }
+  &__tags {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  &__tag {
+    margin-left: 20px;
+    font-family: $mono-font;
+    font-size: 14px;
+  }
+  &__links {
+    display: flex;
+    align-items: center;
+  }
+  &__link {
+    margin-left: 20px;
+    svg {
+      color: $lightest-slate;
+      width: 22px;
+      height: 22px;
+    }
+  }
+}
