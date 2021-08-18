@@ -19,10 +19,20 @@
     margin-bottom: 56px;
     text-align: center;
   }
+  &__btn {
+    margin-top: 55px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
   &__cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 15px;
+
+    @include maxw(687px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__card {
@@ -51,10 +61,20 @@
       }
     }
 
-    &-githubIcon {
-      width: 20px;
-      height: 20px;
-      color: $light-slate;
+    &-links {
+      display: flex;
+      svg {
+        width: 20px;
+        height: 20px;
+        color: $light-slate;
+        margin-left: 15px;
+      }
+      a:hover {
+        svg {
+          transition: 0.2s ease;
+          color: $green;
+        }
+      }
     }
 
     &-title {

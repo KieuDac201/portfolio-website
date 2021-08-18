@@ -1,14 +1,33 @@
 import { Close, Menu } from '@material-ui/icons'
 import React, { useState } from 'react'
+import { useEffect } from 'react'
 import Button from '../Button/Button'
 import './Header.scss'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [header, setHeader] = useState({ show: true, scrollPos: 0 })
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    }
+  })
+
+  const handleScroll = () => {
+    console.log(document.body.offsetTop);
+    setHeader({
+      scrollPos: document.body.getBoundingClientRect().top,
+      show: document.body.getBoundingClientRect().top > header.scrollPos,
+      small: document.body.getBoundingClientRect().top < -20
+    });
+  };
 
   return (
-    <header className="header">
-      <div className="header__container">
+    <header className={header.show ? 'header show' : 'header'}>
+      <div className={header.small ? "header__container small" : "header__container"}>
         <div className="header__logo">
           Kieu Dac
         </div>

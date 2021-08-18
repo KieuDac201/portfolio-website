@@ -1,0 +1,39 @@
+@import "../../sass/variables";
+@import "../../sass/mixin";
+
+.footer {
+  position: relative;
+
+  &__container {
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+    padding: 100px 20px 250px 20px;
+  }
+
+  &__titleSm {
+    font-family: $mono-font;
+    margin-bottom: 14px;
+  }
+
+  &__title {
+    font-size: clamp(40px, 5vw, 60px);
+    color: $lightest-slate;
+    margin-bottom: 20px;
+  }
+  &__desc {
+    margin-bottom: 40px;
+  }
+  &__designer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    font-size: 14px;
+    font-family: $mono-font;
+    text-align: center;
+  }
+}

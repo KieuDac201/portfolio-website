@@ -10,6 +10,11 @@
   z-index: 8;
   background-color: rgba(10, 25, 47, 0.85);
   backdrop-filter: blur(10px);
+  transform: translateY(-100%);
+  transition: 0.2s ease-in;
+  &.show {
+    transform: translateY(0);
+  }
 
   &__container {
     padding: 0 50px;
@@ -17,6 +22,10 @@
     height: $nav-height;
     align-items: center;
     justify-content: space-between;
+    &.small {
+      transition: 0.2s ease;
+      height: $nav-height - 25px;
+    }
     @include maxw(1080px) {
       padding: 0 40px;
     }

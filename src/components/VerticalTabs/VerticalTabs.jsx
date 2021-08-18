@@ -1,27 +1,30 @@
 import React from "react";
 import "./VerticalTabs.scss";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import CustomScroll from 'react-custom-scroll';
 
 const VerticalTabs = () => {
   return (
     <Tabs>
-      <TabList>
-        <Tab>
-          <p>Google</p>
-        </Tab>
-        <Tab>
-          <p>Apple</p>
-        </Tab>
-        <Tab>
-          <p>Microsoft</p>
-        </Tab>
-        <Tab>
-          <p>Facebook</p>
-        </Tab>
-        <Tab>
-          <p>Tesla</p>
-        </Tab>
-      </TabList>
+      <CustomScroll>
+        <TabList>
+          <Tab>
+            <p>Google</p>
+          </Tab>
+          <Tab>
+            <p>Apple</p>
+          </Tab>
+          <Tab>
+            <p>Microsoft</p>
+          </Tab>
+          <Tab>
+            <p>Facebook</p>
+          </Tab>
+          <Tab>
+            <p>Tesla</p>
+          </Tab>
+        </TabList>
+      </CustomScroll>
 
       <TabPanel>
         <div className="panel-content">

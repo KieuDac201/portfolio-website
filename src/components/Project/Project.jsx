@@ -1,6 +1,9 @@
 import React from 'react'
 import './Project.scss'
 import ProjectCard from '../ProjectCard/ProjectCard'
+import Button from '../Button/Button'
+import dataProjects from '../../data/dataProject'
+
 
 const Project = () => {
   return (
@@ -13,13 +16,13 @@ const Project = () => {
           view in github
         </div>
         <div className="project__cards">
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
+          {
+            dataProjects.map((project, i) => <ProjectCard {...project} key={i} />)
+          }
         </div>
-
+        <div className="project__btn">
+          <Button text="Show more" />
+        </div>
       </div>
     </section>
   )
