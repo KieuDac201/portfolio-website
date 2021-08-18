@@ -1,0 +1,27 @@
+@import "../../sass/variables";
+@import "../../sass/mixin";
+
+button {
+  color: $green;
+  background-color: transparent;
+  border: 1px solid $green;
+  border-radius: $border-radius;
+  padding: 1.25rem 1.75rem;
+  font-size: $fz-sm;
+  font-family: $mono-font;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+  @include maxw(768px) {
+    padding: 1.15rem 1.5rem;
+  }
+
+  &:hover {
+    background-color: rgba(100, 255, 218, 0.1);
+  }
+
+  &.sm {
+    padding: 0.75rem 1rem;
+  }
+}

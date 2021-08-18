@@ -1,0 +1,46 @@
+@import "./sass/variables";
+@import "./sass/mixin";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  &::selection {
+    background-color: $lightest-navy;
+    color: $lightest-slate;
+  }
+}
+
+html {
+  font-family: $inter-font;
+}
+body {
+  background: $navy;
+}
+.green-color {
+  color: $green;
+}
+img {
+  width: 100%;
+}
+a {
+  text-decoration: none;
+}
+ul,
+li {
+  list-style: none;
+}
+.title {
+  font-size: clamp(26px, 5vw, $fz-heading);
+  color: $lightest-slate;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 40px;
+  span {
+    margin-right: 8px;
+    font-family: $mono-font;
+    font-size: clamp(14px, 4vw, 20px);
+  }
+}

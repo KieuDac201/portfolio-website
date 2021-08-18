@@ -1,0 +1,121 @@
+@import "../../sass/variables";
+@import "../../sass/mixin";
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 8;
+  background-color: rgba(10, 25, 47, 0.85);
+  backdrop-filter: blur(10px);
+
+  &__container {
+    padding: 0 50px;
+    display: flex;
+    height: $nav-height;
+    align-items: center;
+    justify-content: space-between;
+    @include maxw(1080px) {
+      padding: 0 40px;
+    }
+    @include maxw(768px) {
+      padding: 0 20px;
+    }
+  }
+
+  &__logo {
+    color: $green;
+    font-size: 25px;
+  }
+
+  &__menuIcon {
+    color: $green;
+    display: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    padding: 3px 0 3px 3px;
+
+    @include maxw(768px) {
+      display: inline-block;
+    }
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    height: $nav-height;
+
+    @include maxw(768px) {
+      display: none;
+      right: -100%;
+      transition: 0.2s ease-in;
+      display: flex;
+      position: fixed;
+      top: 0;
+      height: 100vh;
+      flex-direction: column;
+      max-width: 400px;
+      width: 100%;
+      background: $light-navy;
+      justify-content: center;
+      z-index: 9;
+
+      &.active {
+        right: 0;
+      }
+    }
+  }
+
+  &__blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background: #000;
+    opacity: 0.6;
+  }
+  &__link {
+    color: $lightest-slate;
+    text-decoration: none;
+    font-size: $fz-xs;
+    font-family: $mono-font;
+    margin-right: 10px;
+    padding: 10px;
+
+    &:hover {
+      color: $green;
+    }
+
+    span {
+      margin-right: 2px;
+    }
+
+    @include maxw(768px) {
+      margin-right: 0;
+      margin-bottom: 25px;
+      font-size: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      span {
+        margin-right: 0;
+        margin-bottom: 5px;
+        font-size: 16px;
+
+        .dot {
+          display: none;
+        }
+      }
+    }
+  }
+}
