@@ -18,6 +18,9 @@
     "react-tabs": "^3.2.2",
     "web-vitals": "^1.1.2"
   },
+  "engines": {
+    "node": "16"
+  },
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
